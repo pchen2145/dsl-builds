@@ -1,6 +1,6 @@
-// DSL Build File for Maven build and Docker image
+// dslBuildMavenDocker.groovy
 
-def gitUrl = "https://github.com/pchen2145/springbootmaven"
+def gitUrl = "https://github.com/pchen2145/springbootmaven.git"
 
 job("dslBuildMavenDocker") {
     description "Build and package application and push image to Dockerhub"
