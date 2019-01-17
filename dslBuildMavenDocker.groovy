@@ -27,17 +27,18 @@ job("dslBuildMavenDocker") {
             goals('package')
             mavenInstallation('Maven-3.6.0')
             rootPOM('pom.xml')
+        
+
+         dockerBuildAndPublish {
+             repositoryName('pchen2145/springbootimage')
+             tag('$dockertag')
+             dockerHostURI('tcp://localhost:2375')
+             registryCredentials('dockerhub')
+             forcePull(true)
+             createFingerprints(true)
+
+            }
         }
-    }
-
-    dockerBuildAndPublish {
-        repositoryName('pchen2145/springbootimage')
-        tag('${dockertag}')
-        dockerHostURI('tcp://localhost:2375')
-        registryCredentials('dockerhub')
-        forcePull(true)
-        createFingerprints(true)
-
     }
 
 }
