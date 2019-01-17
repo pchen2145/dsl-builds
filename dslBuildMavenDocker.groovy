@@ -7,6 +7,7 @@ job("dslBuildMavenDocker") {
     parameters {
         stringParam('docker-image-tag', 'latest', '')
     }
+
     scm {
         git {
             remote {
@@ -20,11 +21,18 @@ job("dslBuildMavenDocker") {
             }
         }
     }
+
     steps {
         maven('package', 'pom.xml')
+        maven {
+            goals('package')
+            mavenOpts('-Xms256m')
+            mavenOpts('-Xmx512m')
+            localRepository(LocalRepositoryLocation.LOCAL_TO_WORKSPACE)
+            properties(skipTests: true)
+            mavenInstallation('Maven 3.6.0')
+            providedSettings('central-mirror')
+            rootPOM('./pom.xml')
         }
-
-    publishers {
-        downstream('ps-archive', 'SUCCESS')
     }
 }
