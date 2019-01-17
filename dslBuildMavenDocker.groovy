@@ -31,7 +31,6 @@ job("dslBuildMavenDocker") {
             localRepository(LocalRepositoryLocation.LOCAL_TO_WORKSPACE)
             properties(skipTests: true)
             mavenInstallation('Maven 3.6.0')
-            providedSettings('central-mirror')
             rootPOM('./pom.xml')
         }
     }
