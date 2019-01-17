@@ -36,6 +36,7 @@ job("dslBuildMavenDocker") {
             registryCredentials('dockerhub')
             forcePull(true)
             createFingerprints(true)
+            forceTag(false)
         }
     }
 
