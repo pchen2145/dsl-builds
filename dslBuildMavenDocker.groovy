@@ -1,6 +1,6 @@
 // DSL Build File for Maven build and Docker image
 
-def gitUrl = "https://github.com/pchen2145/springbootmaven.git"
+def gitUrl = "https://github.com/pchen2145/springbootmaven"
 
 job("dslBuildMavenDocker") {
     description "Build and package application and push image to Dockerhub"
@@ -23,7 +23,7 @@ job("dslBuildMavenDocker") {
     steps {
         maven('package', 'pom.xml')
         }
-        
+
     publishers {
         downstream('ps-archive', 'SUCCESS')
     }
