@@ -21,15 +21,10 @@ job("dslBuildMavenDocker") {
         }
     }
     steps {
-        maven {
-            rootPOM(pom.xml)
-            goals('package')
-
+        maven('package', 'pom.xml')
         }
-    }
-
+        
     publishers {
         downstream('ps-archive', 'SUCCESS')
     }
 }
-
