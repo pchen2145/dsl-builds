@@ -5,7 +5,7 @@ def gitUrl = "https://github.com/pchen2145/springbootmaven"
 job("dslBuildMavenDocker") {
     description "Build and package application and push image to Dockerhub"
     parameters {
-        stringParam('docker-image-tag', 'latest', '')
+        stringParam('dockertag', 'latest', '')
     }
 
     scm {
