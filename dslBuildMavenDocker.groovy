@@ -25,7 +25,7 @@ job("dslBuildMavenDocker") {
     steps {
         maven {
             goals('package')
-            mavenInstallation('Maven 3.6.0')
+            mavenInstallation('Maven-3.6.0')
             rootPOM('pom.xml')
         }
     }
