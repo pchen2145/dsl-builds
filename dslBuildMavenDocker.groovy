@@ -1,6 +1,6 @@
 // dslBuildMavenDocker.groovy
 
-def gitUrl = "https://github.com/pchen2145/springbootmaven.git"
+def gitUrl = "https://github.com/pchen2145/springbootmaven"
 
 job("dslBuildMavenDocker") {
     description "Build and package application and push image to Dockerhub"
@@ -23,15 +23,10 @@ job("dslBuildMavenDocker") {
     }
 
     steps {
-        maven('package', 'pom.xml')
         maven {
             goals('package')
-            mavenOpts('-Xms256m')
-            mavenOpts('-Xmx512m')
-            localRepository(LocalRepositoryLocation.LOCAL_TO_WORKSPACE)
-            properties(skipTests: true)
             mavenInstallation('Maven 3.6.0')
-            rootPOM('./pom.xml')
+            rootPOM('pom.xml')
         }
     }
 }
