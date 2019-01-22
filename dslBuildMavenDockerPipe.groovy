@@ -5,12 +5,14 @@ def pipelineList = ["Pipeline 1", "Pipeline2", "Pipeline3"]
 
 println pipelineList
 
-//pipelineList.each {
+pipelineList.each {
 
-    job("Pipeline1") {
-        description "Pipeline" {
+    job(it) {
+        description (it)
+        parameters {
             stringParam('dockertag', 'latest', '')
         }
+        
 
         scm {
             git {
@@ -45,4 +47,4 @@ println pipelineList
         }
 
     }
-//}
+}
