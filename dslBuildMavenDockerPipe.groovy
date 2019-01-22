@@ -2,7 +2,7 @@
 
 def gitUrl = "https://github.com/pchen2145/springbootmaven"
 
-for (i in 0..5) {
+for(i in 0..5) {
 
 job("Pipeline${i+1}") {
     description "Pipeline" {
