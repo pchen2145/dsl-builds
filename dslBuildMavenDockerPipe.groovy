@@ -1,7 +1,8 @@
 // dslBuildMavenDockerPipe.groovy
 
 def gitUrl = "https://github.com/pchen2145/springbootmaven"
-def pipelineList = ["Pipeline 1", "Pipeline2", "Pipeline3"]
+
+def pipelineList = readYaml(file: "pipelinelist.yml")
 
 println pipelineList
 

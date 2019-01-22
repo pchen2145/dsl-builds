@@ -1,0 +1,6 @@
+---
+# Names of pipelines to generate
+names:
+  - Pipeline1
+  - Pipeline2
+  - Pipeline3
