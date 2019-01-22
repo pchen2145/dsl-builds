@@ -1,12 +1,15 @@
 // dslBuildMavenDockerPipe.groovy
 
+import org.yaml.snakeyaml.Yaml
+
 def gitUrl = "https://github.com/pchen2145/springbootmaven"
 
-def pipelineList = readYaml file: "pipelinelist.yml"
+Yaml yaml = new Yaml()
+def pipelineobj = yaml.load(("pipelinelist.yml" as File).text)
 
-println pipelineList
+println pipelineobj
 
-pipelineList.each {
+pipelineobj.names.each {
 
     job("${it}") {
         description ("${it}")
