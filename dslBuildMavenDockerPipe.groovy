@@ -5,7 +5,11 @@ import org.yaml.snakeyaml.Yaml
 def gitUrl = "https://github.com/pchen2145/springbootmaven"
 
 Yaml yaml = new Yaml()
-def pipelineobj = yaml.load(new File('./pipelinelist.yml').text)
+//InputStream inputStream = this.getClass()
+// .getClassLoader()
+//  .getResourceAsStream("pipelinelist.yml")
+
+def pipelineobj = yaml.load(new File("${workspace}/pipelinelist.yml").text)
 
 println pipelineobj
 
