@@ -2,7 +2,7 @@
 
 def gitUrl = "https://github.com/pchen2145/springbootmaven"
 
-def pipelineList = readYaml(file: "pipelinelist.yml")
+def pipelineList = readYaml file: "pipelinelist.yml"
 
 println pipelineList
 
