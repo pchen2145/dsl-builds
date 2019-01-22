@@ -5,7 +5,7 @@ import org.yaml.snakeyaml.Yaml
 def gitUrl = "https://github.com/pchen2145/springbootmaven"
 
 Yaml yaml = new Yaml()
-def pipelineobj = yaml.load(("pipelinelist.yml" as File).text)
+def pipelineobj = yaml.load(new File('./pipelinelist.yml').text)
 
 println pipelineobj
 
