@@ -7,8 +7,8 @@ println pipelineList
 
 pipelineList.each {
 
-    job(it) {
-        description (it)
+    job("${it}") {
+        description ("${it}")
         parameters {
             stringParam('dockertag', 'latest', '')
         }
