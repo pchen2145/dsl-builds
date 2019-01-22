@@ -10,7 +10,7 @@ def gitUrl = "https://github.com/pchen2145/springbootmaven"
 // .getClassLoader()  
 // .getResourceAsStream("pipelinelist.yml")
 //Map pipelineobj = yaml.load(inputStream)
-def pipelineobj = yaml.load(new File("${WORKSPACE}/pipelinelist.yml").text)
+def pipelineobj = yaml.load(new File("${env.WORKSPACE}/pipelinelist.yml").text)
 
 println pipelineobj
 
