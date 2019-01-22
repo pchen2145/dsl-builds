@@ -4,7 +4,7 @@ def gitUrl = "https://github.com/pchen2145/springbootmaven"
 
 for (i = 1; i < 5; i++) {
 
-job("Pipeline${i}") {
+job("Pipeline1") {
     description "Pipeline" {
         stringParam('dockertag', 'latest', '')
     }
